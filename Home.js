@@ -16,9 +16,8 @@ class Home extends React.Component {
         return (
             <SafeAreaView>
                 <Button raised primary text="Search" onPress={() => {
-                    this.props.navigation.navigate('SearchResultScreen')
-                }}>
-                </Button>
+                    this.props.navigation.navigate('SearchResultScreen', { userName: 'culzeanmememe' } );
+                }}/>
             </SafeAreaView>
         );
     }
