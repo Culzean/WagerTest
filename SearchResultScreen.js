@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
   FlatList,
-  View,
-  Text,
-  StatusBar,
 } from 'react-native';
 import { ListItem, Subheader } from 'react-native-material-ui';
 
@@ -38,7 +34,7 @@ const SearchResultScreen = (props) => {
                         .sort((repoA, repoB) => repoB.stargazers_count - repoA.stargazers_count)
                         .slice(0, 10);
 
-        setState({ repos:responseJson });
+        setState({ repos:responseJson, title });
     }
 
     useEffect(() => {
@@ -62,7 +58,7 @@ const SearchResultScreen = (props) => {
         );
     };
 
-    const keyExtractor = (item, index) => item.id;
+    const keyExtractor = (item, index) => 'key_' + item.id;
 
     return (
         <SafeAreaView>
