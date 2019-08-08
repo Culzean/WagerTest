@@ -7,7 +7,9 @@ clone project, cd to root
 
 
 run npm i
+
 cd android; gradlew clean;
+
 cd ios; pod install;
 
 back in root
